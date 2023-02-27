@@ -15,8 +15,7 @@ class ProductPage(BasePage):
     def should_be_success_message_for_add_to_basket(self, title_of_item):
         flag = False
         for message in self.success_messages:
-            if "been added to your basket" in message.text and \
-                title_of_item in message.text:
+            if title_of_item + " has been added to your basket." == message.text:
                 print(message.text)
                 flag = True
         assert flag, "Success message did not found on the product page"
