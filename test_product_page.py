@@ -11,4 +11,5 @@ def test_guest_can_add_product_to_basket(browser):
     page.solve_quiz_and_get_code()
     # time.sleep(500)
     page.should_success_message_exists()
-    page.should_be_success_message_for_add_to_basket()
+    title_of_item = page.get_title_of_item()
+    page.should_be_success_message_for_add_to_basket(title_of_item)
