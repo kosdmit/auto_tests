@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
-
+    SELECTED_LANGUAGE = (By.CSS_SELECTOR, 'select[name="language"] option[selected="selected"]')
 
 class MainPageLocators():
     pass
@@ -20,3 +20,8 @@ class ProductPageLocators():
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert-success div.alertinner")
     ITEM_TITLE = (By.CSS_SELECTOR, 'div.product_main h1')
     ITEM_PRICE = (By.CSS_SELECTOR, 'div.product_main p.price_color')
+
+
+class BasketPageLocators():
+    ITEM = (By.CSS_SELECTOR, 'div.basket-items div')
+    MESSAGE = (By.CSS_SELECTOR, '#content_inner > p')

@@ -1,6 +1,9 @@
+import time
+
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import math
@@ -61,3 +64,9 @@ class BasePage():
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
+    def go_to_basket_page(self):
+        selected_language = self.browser.find_element(*BasePageLocators.SELECTED_LANGUAGE)
+        language_value = selected_language.get_attribute("value")
+        link = self.browser.find_element(By.CSS_SELECTOR, f'a.btn[href="/{language_value}/basket/"]')
+        link.click()
