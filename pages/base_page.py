@@ -70,3 +70,7 @@ class BasePage():
         language_value = selected_language.get_attribute("value")
         link = self.browser.find_element(By.CSS_SELECTOR, f'a.btn[href="/{language_value}/basket/"]')
         link.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

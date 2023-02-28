@@ -5,6 +5,7 @@ class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     SELECTED_LANGUAGE = (By.CSS_SELECTOR, 'select[name="language"] option[selected="selected"]')
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class MainPageLocators():
     pass
@@ -13,6 +14,10 @@ class MainPageLocators():
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
     REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
+    REGISTER_EMAIL_INPUT = (By.CSS_SELECTOR, '#id_registration-email')
+    REGISTER_PASSWORD_INPUT = (By.CSS_SELECTOR, '#id_registration-password1')
+    REGISTER_REPEAT_PASSWORD_INPUT = (By.CSS_SELECTOR, '#id_registration-password2')
+    REGISTER_SUBMIT = (By.CSS_SELECTOR, 'button[name="registration_submit"]')
 
 
 class ProductPageLocators():
